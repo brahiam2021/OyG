@@ -10,15 +10,17 @@ namespace OyG.Models
     {
         
         [Key]
-        public int Id_herramienta { get; set; }
-        [MaxLength(20)]
+        public int Id { get; set; }
+        
+        [MaxLength(25)]
         [Required(ErrorMessage ="Se requiere nombre de la herramienta")]
         [Display(Name ="Nombre Herramienta")]
         public string Nombre_herramineta { get; set; }
 
         [Required(ErrorMessage ="Se requiere Cantidad de Herramienta")]
-        public int Cant_herramienta { get; set; }
+        public int Cantidad_herramienta { get; set; }
+        
         [Required(ErrorMessage ="Se reuqiere el estado de la herramienta")]
-        public bool Est_hermienta { get; set; }
+        public bool Estado_hermienta { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace OyG.Models
         [Key]
         public int Id_eps { get; set;}
 
-        [MaxLength(20)]
+        [MaxLength(50)]
         [Required(ErrorMessage ="Se requiere nombre eps")]
         [Display(Name ="EPS")]
         public string Nombre_eps { get; set; }

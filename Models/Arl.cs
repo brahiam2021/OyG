@@ -9,9 +9,9 @@ namespace OyG.Models
     public class Arl
     {
         [Key]
-        public int Id_arl { get; set; }
+        public int Id { get; set; }
 
-        [MaxLength(20)]
+        [MaxLength(50)]
         [Required(ErrorMessage ="Se requiere nombre ARL")]
         [Display(Name ="Nombre ARL")]
         public string Nombre_arl { get; set; }

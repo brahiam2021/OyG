@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace OyG.Models
     public class Empleado
     {
         [Key]
-        public int Idempleado { get; set; }
+        public int Id { get; set; }
 
         [MaxLength(20)]
         [Required(ErrorMessage ="Se requiere el campo Nombre de empleado ")]
@@ -22,12 +23,13 @@ namespace OyG.Models
         public  string ApellidoEmpleado { get; set; }
 
   
-        [Required(ErrorMessage = "Se requiere el campo Nombre de empleado ")]
+        [Required(ErrorMessage = "Se requiere el campo Edad empleado ")]
         public int  EdadEmpleado { get; set; }
 
         [MaxLength(20)]
         [Required(ErrorMessage = "Se requiere el campo E-mail de empleado ")]
-        [Display(Name = "E-mail")]
+        [Display(Name = "Correo electronico")]
+        [EmailAddress]
         public string CorreoEmpleado { get; set; }
 
         [Required(ErrorMessage ="Se requiere el campo Telefono")]
@@ -40,25 +42,20 @@ namespace OyG.Models
         [Display(Name = "Direccion")]
         public string Direccion { get; set; }
 
-        [MaxLength(20)]
-        [Required(ErrorMessage = "Se requiere el campo Eps del empleado ")]
-        [Display(Name = "Eps")]
-        public string Eps { get; set; }
+      [ForeignKey("ArlId")]
+      public Arl Arl { get; set; }
 
-        [MaxLength(20)]
-        [Required(ErrorMessage = "Se requiere el campo Arl de empleado ")]
-        [Display(Name = "Arl")]
-        public string Arl { get; set; }
+      [ForeignKey("EpsIs")]
+      public Eps Eps { get; set; }
 
-        
-        [Required(ErrorMessage = "Se requiere el campo Sueldo de empleado ")]
-        [Display(Name ="Sueldo")]
-        public double Sueldo { get; set; }
+         
+      [Required(ErrorMessage = "Se requiere el campo Sueldo de empleado ")]
+      [Display(Name ="Sueldo")]
+      public double Sueldo { get; set; }
 
 
-        [Required(ErrorMessage = "Se requiere el campo Estado de empleado ")]
-        [Display(Name = "Estado")]
-        public bool EstadoEmpleado { get; set; }
+      [ForeignKey("Usuariosusuario")]
+      public Usuarios Usuarios { get; set; }
         
     }
 }
